@@ -1,6 +1,5 @@
 from tkinter import ttk
 from PIL import ImageTk, Image
-import matplotlib
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from pandastable import Table, config
 from VMB_Generators.Pivot_Table_Generator import *
@@ -10,7 +9,6 @@ from VMB_Generators.KeyFacts_Sector_Generator import *
 from VMB_Generators.Industry_Selection import *
 from VMB_Generators.Model_Generator import *
 
-matplotlib.use("TkAgg")
 
 # Database:
 df_base = pd.read_csv("CAX_Preprocessed_PROG.csv")
@@ -97,10 +95,10 @@ def raise_frame(frame_to_call):
 # -------------------- Main page --------------------
 
 # Title:
-title1 = tk.Label(main_page, text="VMB", font=("Avenir", 40))
+title1 = tk.Label(main_page, text="VMB", font=("Avenir", 40, 'bold'))
 title1.grid(row=0, column=3)
 
-title2 = tk.Label(main_page, text="Venture Capital", font=("Avenir", 20))
+title2 = tk.Label(main_page, text="Venture Capital", font=("Avenir", 20, 'bold'))
 title2.grid(row=0, column=4, sticky='w')
 
 # Profile presentation:
@@ -694,20 +692,22 @@ interactive_analysis_button(vmb_model1, interactive_analysis1, 1, 8)
 destroyer_button(vmb_model1, main_page, 11, 11)
 link_exp(vmb_model1, 11, 1)
 
-feature_explanation = '  VMB Venture Capital developed a tool to forecast if a startup is to be successful based on' \
+feature_explanation = '\n    VMB Venture Capital developed a tool to forecast if a startup is to be ' \
+                      'successful based on ' \
                       'a series of features. The model takes 12 features\n' \
-                      '  divided in four categories: Industry, Experience of the cofounders team, Market ' \
+                      '    divided in four categories: Industry, Experience of the cofounders team, Market ' \
                       'characteristics, and Business model.\n' \
-                      '  A deeper explanation of the features in provided in the link at the bottom of the page.' \
-                      '  This model is meant to connect investors and potentially successful startups, and finally ' \
-                      'generate a more efficient capital allocation.\n' \
-                      '  For the entrepreneur: We invite you to submit your information to receive the forecast. ' \
+                      '    A deeper explanation of the features in provided in the link at the bottom of the page.' \
+                      'This model is meant to connect investors and\n' \
+                      '    potentially successful startups, and finally generate a more efficient capital ' \
+                      'allocation.\n\n' \
+                      '    For the entrepreneur: We invite you to submit your information to receive the forecast. ' \
                       'This way you can see in which topics you must focus\n' \
-                      '  on and improve your chance of success! Keep on because your next investor may be watching!'
+                      '    on and improve your chance of success! Keep on because your next investor may be watching!'
 
 exp_features = tk.Label(vmb_model1, text=feature_explanation, font=NORMAL_FONT, justify='left', anchor='nw')
 exp_features.grid(row=2, column=0, columnspan=10, sticky='nsew')
-exp_features.config(width=60, height=5)
+exp_features.config(width=60, height=8)
 
 title_sector = tk.Label(vmb_model1, text="Model features: Industry", font=('Avenir', 20, 'bold'))
 title_sector.grid(row=3, column=0, columnspan=10, sticky='nsew')
@@ -1199,8 +1199,8 @@ def charge_inputs():
 
 ending_text = '\n  Thank you for using VMB Venture Capital tool to get our forecast about your startup. The tool was ' \
               'developed by\n ' \
-              '  our data scientists to provide what determinants entrepreneurs like you have to focus on to succeed, ' \
-              'and to\n' \
+              '  our data scientists to provide what determinants entrepreneurs like you have to focus on to ' \
+              'succeed, and to\n' \
               '  convince the policy makers on what they have to work on to make our ecosystem to flourish.\n' \
               '  The model used is Random Forest with a hyper parameter tuning, trained by the CAX_Startup database ' \
               'available\n' \
