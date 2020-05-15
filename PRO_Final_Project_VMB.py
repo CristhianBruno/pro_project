@@ -95,16 +95,29 @@ def raise_frame(frame_to_call):
 # -------------------- Main page --------------------
 
 # Title:
-title1 = tk.Label(main_page, text="VMB", font=("Avenir", 40, 'bold'))
-title1.grid(row=0, column=3)
+title1 = tk.Label(main_page, text="VMB", font=("Avenir", 60, 'bold'))
+title1.grid(row=0, column=3, sticky='nse')
 
-title2 = tk.Label(main_page, text="Venture Capital", font=("Avenir", 20, 'bold'))
-title2.grid(row=0, column=4, sticky='w')
+title2 = tk.Label(main_page, text="Venture\nCapital", font=("Avenir", 20))
+title2.grid(row=0, column=4, sticky='nsw')
 
 # Profile presentation:
-profile_presentation = "We are a Venture Capital fund aimed to connect..."
-profile = tk.Label(main_page, text=profile_presentation, font=NORMAL_FONT)
-profile.grid(row=1, column=2, columnspan=4)
+profile_presentation = 'Welcome to VMB Venture Capital - Investor Platform!\n\n' \
+                       'We designed this tool to provide you with a more in-depth insight into the startup ' \
+                       'ecosystem \n' \
+                       'and the features that matter the most when analyzing a potential investment in a startup.\n\n' \
+                       "The firm's strategy is to provide a broader scope of investment options for the investor, " \
+                       "particularly\n" \
+                       "in regions and countries, like Bolivia, with an underdeveloped startup market. These " \
+                       "prospective\n" \
+                       "areas have high potential but currently lack adequate tools and networks to raise " \
+                       "required resources.\n\n" \
+                       "Thus in times of uncertainty, the adaptability and replicability of VMB's tools are " \
+                       "our answer to these\n" \
+                       "shortcomings. This way, we can help to support one of world's backbones, good ideas!"
+
+profile = tk.Label(main_page, text=profile_presentation, font=NORMAL_FONT, justify='left', anchor='nw')
+profile.grid(row=1, column=2, columnspan=4, sticky='nsew')
 
 # Logo
 
