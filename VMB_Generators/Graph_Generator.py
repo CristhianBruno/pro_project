@@ -15,9 +15,9 @@ def Graph_Main(data_frame):
     colors = ['#005878', '#63ffb3']
     ax_STA.pie(STA_list, labels=labels, autopct='%1.1f%%',
                shadow=True, startangle=290, pctdistance=1.15, labeldistance=1.35,
-               colors=colors, textprops={'fontsize': 12, 'fontname': 'Avenir'})
+               colors=colors, textprops={'fontsize': 12, 'fontname': 'DejaVu Sans'})
     ax_STA.axis('equal')
-    ax_STA.set_title("Success Rate of Startups", fontname='Avenir', fontsize=16)
+    ax_STA.set_title("Success Rate of Startups", fontname='DejaVu Sans', fontsize=16, fontweight='bold')
     figure_STA.set_tight_layout('tight')
 
     return figure_STA
@@ -43,12 +43,12 @@ def Graph_Main1(data_frame):
     p1 = ax1.bar(ind, year_success)
     p2 = ax1.bar(ind, year_failed, bottom=year_success)
 
-    ax1.set_ylabel('Number of companies', fontname='Avenir', fontsize=8)
+    ax1.set_ylabel('Number of companies', fontname='DejaVu Sans', fontsize=8)
     ax1.legend([p1, p2], ['Success', 'Failed'])
     ax1.set_xticks(range(N))
-    ax1.set_xticklabels(yof_list, fontname='Avenir')
+    ax1.set_xticklabels(yof_list, fontname='DejaVu Sans')
     ax1.tick_params(axis='both', labelsize=6)
-    ax1.set_title('Status by Year of Foundation', fontname='Avenir', fontsize=12)
+    ax1.set_title('Status by Year of Foundation', fontname='DejaVu Sans', fontsize=12, fontweight='bold')
     figure1.set_tight_layout('tight')
 
     return figure1
@@ -70,9 +70,9 @@ def Graph_Main2(data_frame):
               '#00b8b8', '#00d0bb', '#11e8b9', '#63ffb3']
     ax_COU.pie(COU_values, labels=labels, autopct='%1.1f%%',
                shadow=True, startangle=15, pctdistance=1.15, labeldistance=1.35,
-               colors=colors, textprops={'fontsize': 8, 'fontname': 'Avenir'})
+               colors=colors, textprops={'fontsize': 8, 'fontname': 'DejaVu Sans'})
     ax_COU.axis('equal')
-    ax_COU.set_title("Startups per Country", fontname='Avenir', fontsize=12)
+    ax_COU.set_title("Startups per Country", fontname='DejaVu Sans', fontsize=12, fontweight='bold')
     figure_COU.set_tight_layout('tight')
 
     return figure_COU
@@ -94,7 +94,7 @@ def Graph_Main3(data_frame):
     figure_E10 = plt.Figure(figsize=(4, 3), dpi=100)
     ax_E10STA = figure_E10.add_subplot(111)
     pivot_E10STA.plot.barh(x='Top', legend=True, ax=ax_E10STA, rot=90)
-    ax_E10STA.set_title('Worked on top companies', fontname='Avenir', fontsize=12)
+    ax_E10STA.set_title('Worked on top companies', fontname='DejaVu Sans', fontsize=12, fontweight='bold')
     ax_E10STA.set_ylabel('', fontdict={'size': 8})
     figure_E10.set_tight_layout('tight')
 
@@ -116,7 +116,7 @@ def Graph_Main4(data_frame):
     figure_INC = plt.Figure(figsize=(4, 3), dpi=100)
     ax_INCSTA = figure_INC.add_subplot(111)
     pivot_INCSTA.plot.barh(x='Incubator', stacked=True, legend=True, ax=ax_INCSTA, rot=90)
-    ax_INCSTA.set_title('Invested through global incubator', fontname='Avenir', fontsize=11)
+    ax_INCSTA.set_title('Invested through global incubator', fontname='DejaVu Sans', fontsize=11, fontweight='bold')
     ax_INCSTA.set_ylabel('', fontdict={'size': 8})
     figure_INC.set_tight_layout('tight')
 
@@ -126,7 +126,7 @@ def Graph_Main4(data_frame):
 def Graph_Main5(data_frame):
     df = data_frame
     pivot_AYESTA = pd.pivot_table(df, values='YOF', index='AYE', columns='STA',
-                                      aggfunc=np.count_nonzero, fill_value=0, margins=True)
+                                  aggfunc=np.count_nonzero, fill_value=0, margins=True)
     pivot_AYESTA.sort_values(['Success'], inplace=True)
     pivot_AYESTA['Total'] = pivot_AYESTA['Success'] + pivot_AYESTA['Failed']
     pivot_AYESTA['Failed'] = round(pivot_AYESTA['Failed'] / pivot_AYESTA['Total']*100, 2)
@@ -140,7 +140,7 @@ def Graph_Main5(data_frame):
     figure_AYE = plt.Figure(figsize=(4, 3), dpi=100)
     ax_AYESTA = figure_AYE.add_subplot(111)
     pivot_AYESTA.plot.barh(x='Experience', stacked=True, legend=True, ax=ax_AYESTA, rot=0)
-    ax_AYESTA.set_title('Cofounders Relevant Experience', fontname='Avenir', fontsize=12)
+    ax_AYESTA.set_title('Cofounders Relevant Experience', fontname='DejaVu Sans', fontsize=12, fontweight='bold')
     ax_AYESTA.legend(bbox_to_anchor=(0., -0.2, 1., .102), loc='center',
                      ncol=2, mode="expand", borderaxespad=0)
     figure_AYE.set_tight_layout('tight')
@@ -166,7 +166,7 @@ def Graph_Main6(data_frame):
     figure_DWF = plt.Figure(figsize=(4, 3), dpi=100)
     ax_DWFSTA = figure_DWF.add_subplot(111)
     pivot_DWFSTA.plot.area(x='Difficulty', stacked=True, legend=True, ax=ax_DWFSTA, rot=0)
-    ax_DWFSTA.set_title('Difficulty to find workforce (%)', fontname='Avenir', fontsize=12)
+    ax_DWFSTA.set_title('Difficulty to find workforce (%)', fontname='DejaVu Sans', fontsize=12, fontweight='bold')
     ax_DWFSTA.legend(bbox_to_anchor=(0., -0.2, 1., .102), loc='center',
                      ncol=2, mode="expand", borderaxespad=0)
     figure_DWF.set_tight_layout('tight')
@@ -177,7 +177,7 @@ def Graph_Main6(data_frame):
 def Graph_Main7(data_frame):
     df = data_frame
     pivot_BARSTA = pd.pivot_table(df, values='YOF', index='BAR', columns='STA',
-                                      aggfunc=np.count_nonzero, fill_value=0, margins=True)
+                                  aggfunc=np.count_nonzero, fill_value=0, margins=True)
     pivot_BARSTA.sort_values(['All'], inplace=True)
     pivot_BARSTA = pivot_BARSTA.iloc[:-1].drop(columns=['All'])
     pivot_BARSTA = pivot_BARSTA.reset_index()
@@ -203,7 +203,7 @@ def Graph_Main7(data_frame):
     subgroup_size=[yes_f, no_f, yes_s, no_s]
 
     # Create colors:
-    a, c=[plt.cm.Blues, plt.cm.Greens]
+    a, c = [plt.cm.Blues, plt.cm.Greens]
 
     # First Ring (outside):
     figure_BAR = plt.Figure(figsize=(4, 3), dpi=100)
@@ -212,15 +212,16 @@ def Graph_Main7(data_frame):
     ax_BARSTA.axis('equal')
     mypie, _ = ax_BARSTA.pie(group_size, radius=1.3,
                              labels=group_names, colors=[a(0.7), c(0.7)],
-                             textprops={'fontsize': 10, 'fontname': 'Avenir'}, startangle=350)
+                             textprops={'fontsize': 10, 'fontname': 'DejaVu Sans'}, startangle=350)
     plt.setp( mypie, width=0.3, edgecolor='white')
 
     # Second Ring (Inside):
     mypie2, _ = ax_BARSTA.pie(subgroup_size, radius=1.3-0.3,
                               labels=subgroup_names, labeldistance=0.7, colors=[a(0.6), a(0.3), c(0.6), c(0.3)],
-                              textprops={'fontsize': 8, 'fontname': 'Avenir'}, startangle=350)
+                              textprops={'fontsize': 8, 'fontname': 'DejaVu Sans'}, startangle=350)
     plt.setp(mypie2, width=0.4, edgecolor='white')
-    ax_BARSTA.set_title('Barriers to entry to industry by status', fontname='Avenir', fontsize=11)
+    ax_BARSTA.set_title('Barriers to entry to industry by status', fontname='DejaVu Sans', fontsize=11,
+                        fontweight='bold')
     figure_BAR.set_tight_layout('tight')
 
     return figure_BAR
@@ -240,9 +241,10 @@ def Graph_Main8(data_frame):
     figure_INV = plt.Figure(figsize=(4, 3), dpi=100)
     ax_FUNINV = figure_INV.add_subplot(111)
     pivot_FUNINV.plot.scatter(x='FUN', y='INV', ax=ax_FUNINV, c='#005878')
-    ax_FUNINV.set_title('Funding per number of investors and advisors', fontname='Avenir', fontsize=12)
-    ax_FUNINV.set_ylabel('Investors and advisors', fontdict={'size': 8, 'fontname': 'Avenir'})
-    ax_FUNINV.set_xlabel('Funding in USD MM.', fontdict={'size': 8, 'fontname': 'Avenir'})
+    ax_FUNINV.set_title('Funding per number of\ninvestors and advisors', fontname='DejaVu Sans',
+                        fontsize=12, fontweight='bold')
+    ax_FUNINV.set_ylabel('Investors and advisors', fontdict={'size': 8, 'fontname': 'DejaVu Sans'})
+    ax_FUNINV.set_xlabel('Funding in USD MM.', fontdict={'size': 8, 'fontname': 'DejaVu Sans'})
     figure_INV.set_tight_layout('tight')
 
     return figure_INV
@@ -261,8 +263,9 @@ def Graph_Sector_Pie(data_frame):
     colors = ['#f1f1f1', '#63ffb3', '#00e4b7', '#00c8b7', '#00abb0',
               '#008fa3', '#007390', '#005878', '#003f5c']
     ax_sector.pie(pivot_GSESTA['All'], labels=labels, autopct='%1.1f%%',
-                  shadow=True, startangle=180, pctdistance=1.15, labeldistance=1.3,
+                  shadow=True, startangle=0, pctdistance=1.15, labeldistance=1.3,
                   colors=colors, textprops={'fontsize': 8})
+    ax_sector.set_title('Startups by sector', fontname='DejaVu Sans', fontsize=11, fontweight='bold')
     ax_sector.axis('equal')
     figure_sector.set_tight_layout('tight')
 
@@ -289,7 +292,8 @@ def Graph_Sector_Barh(data_frame):
     figure_FUN = plt.Figure(figsize=(7, 4), dpi=100)
     ax_FUNSTA = figure_FUN.add_subplot(111)
     pivot_FUNSTA.plot.barh(x='Sector', stacked=False, subplots=False, legend=True, ax=ax_FUNSTA, rot=45)
-    ax_FUNSTA.set_title('Avg. Funding Amount by Sector (USD MM)', fontname='Avenir', fontsize=11)
+    ax_FUNSTA.set_title('Avg. Funding Amount by Sector (USD MM)', fontname='DejaVu Sans', fontsize=11,
+                        fontweight='bold')
     ax_FUNSTA.legend(loc='lower right')
     ax_FUNSTA.set_yticklabels(pivot_FUNSTA['Sector'].tolist(), fontdict={'size': 6})
     ax_FUNSTA.set_ylabel('', fontdict={'size': 8})
@@ -317,7 +321,8 @@ def Graph_Sector_1(data_frame, selected_sector):
     figure_FUNGSU = plt.Figure(figsize=(7, 4), dpi=100)
     ax_FUNGSU = figure_FUNGSU.add_subplot(111)
     pivot_FUNGSU.plot.barh(x='Subindustry', stacked=False, subplots=False, legend=True, ax=ax_FUNGSU, rot=45)
-    ax_FUNGSU.set_title('Avg. Funding Amount by Subindustry (USD MM)', fontname='Avenir', fontsize=11)
+    ax_FUNGSU.set_title('Avg. Funding Amount by Subindustry (USD MM)', fontname='DejaVu Sans', fontsize=11,
+                        fontweight='bold')
     ax_FUNGSU.legend(loc='lower right')
     ax_FUNGSU.set_yticklabels(pivot_FUNGSU['Subindustry'].tolist(), fontdict={'size': 8})
     ax_FUNGSU.set_ylabel('', fontdict={'size': 8})
@@ -344,7 +349,8 @@ def Graph_Sector_RE(data_frame, selected_sector):
     figure_FUNGSU = plt.Figure(figsize=(7, 4), dpi=100)
     ax_FUNGSU = figure_FUNGSU.add_subplot(111)
     pivot_FUNGSU.plot.barh(x='Subindustry', stacked=False, subplots=False, legend=True, ax=ax_FUNGSU, rot=45)
-    ax_FUNGSU.set_title('Avg. Funding Amount by Subindustry (USD MM)', fontname='Avenir', fontsize=11)
+    ax_FUNGSU.set_title('Avg. Funding Amount by Subindustry (USD MM)', fontname='DejaVu Sans', fontsize=11,
+                        fontweight='bold')
     ax_FUNGSU.legend(loc='lower right')
     ax_FUNGSU.set_yticklabels(pivot_FUNGSU['Subindustry'].tolist(), fontdict={'size': 8})
     ax_FUNGSU.set_ylabel('', fontdict={'size': 8})

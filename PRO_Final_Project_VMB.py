@@ -1,3 +1,10 @@
+""" # Programing - Final Project
+The present project is
+
+
+"""
+
+
 from tkinter import ttk
 from PIL import ImageTk, Image
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
@@ -17,12 +24,12 @@ df = df_base.merge(df_ind, on='IND')
 df_dict = pd.read_csv("CAX_Summary_Sector.csv", index_col="Sector")
 
 # Fonts:
-LARGE_FONT = ("Avenir", 14)
-LARGE_FONT_B = ("Avenir", 14, 'bold')
-NORMAL_FONT = ("Avenir", 12)
-SMALL_FONT = ("Avenir", 10)
+LARGE_FONT = ("DejaVu Sans", 12)
+LARGE_FONT_B = ("DejaVu Sans", 12, 'bold')
+NORMAL_FONT = ("DejaVu Sans", 10)
+SMALL_FONT = ("DejaVu Sans", 8)
 
-options = {'rowheight': 32, 'colheadercolor': '#0087a2', 'font': 'Avenir', 'fontsize': 12, 'grid_color': '#dbfff0',
+options = {'rowheight': 32, 'colheadercolor': '#0087a2', 'font': 'DejaVu Sans', 'fontsize': 10, 'grid_color': '#dbfff0',
            'rowselectedcolor': '#9be7da', 'cellbackgr': 'white'}
 
 # Create the program:
@@ -89,16 +96,26 @@ for frame in (main_page, dashboard, table_sector, interactive_analysis1,
 
 
 def raise_frame(frame_to_call):
+    """
+
+    Parameters
+    ----------
+    frame_to_call
+
+    Returns
+    -------
+
+    """
     frame_to_call.tkraise()
 
 
 # -------------------- Main page --------------------
 
 # Title:
-title1 = tk.Label(main_page, text="VMB", font=("Avenir", 60, 'bold'))
+title1 = tk.Label(main_page, text="VMB", font=("DejaVu Sans", 60, 'bold'))
 title1.grid(row=0, column=3, sticky='nse')
 
-title2 = tk.Label(main_page, text="Venture\nCapital", font=("Avenir", 20))
+title2 = tk.Label(main_page, text="Venture\nCapital", font=("DejaVu Sans", 20))
 title2.grid(row=0, column=4, sticky='nsw')
 
 # Profile presentation:
@@ -139,45 +156,45 @@ vmb_model_button(main_page, vmb_model1, 2, 4)
 destroyer_button(main_page, main_page, 10, 5)
 
 # Key facts:
-nr1 = tk.Label(main_page, text="472", font=("Avenir", 50), fg='dodgerblue', anchor='s')
+nr1 = tk.Label(main_page, text="472", font=("DejaVu Sans", 50), fg='dodgerblue', anchor='s')
 nr1.grid(row=3, column=0, columnspan=2)
 nr1.config(width=8, height=2)
-fact1 = tk.Label(main_page, text="Companies", font=("Avenir Bold", 20), fg='black', anchor='n')
+fact1 = tk.Label(main_page, text="Companies", font=("DejaVu Sans Bold", 20), fg='black', anchor='n')
 fact1.grid(row=4, column=0, columnspan=2)
 
-nr2 = tk.Label(main_page, text="21", font=("Avenir", 50), fg='dodgerblue', anchor='s')
+nr2 = tk.Label(main_page, text="21", font=("DejaVu Sans", 50), fg='dodgerblue', anchor='s')
 nr2.grid(row=3, column=2, columnspan=2)
 nr2.config(width=8, height=2)
-fact2 = tk.Label(main_page, text="Countries", font=("Avenir Bold", 20), fg='black', anchor='n')
+fact2 = tk.Label(main_page, text="Countries", font=("DejaVu Sans Bold", 20), fg='black', anchor='n')
 fact2.grid(row=4, column=2, columnspan=2)
 
-nr3 = tk.Label(main_page, text="19", font=("Avenir", 50), fg='dodgerblue', anchor='s')
+nr3 = tk.Label(main_page, text="19", font=("DejaVu Sans", 50), fg='dodgerblue', anchor='s')
 nr3.grid(row=3, column=4, columnspan=2)
 nr3.config(width=8, height=2)
-fact3 = tk.Label(main_page, text="Industries", font=("Avenir Bold", 20), fg='black', anchor='n')
+fact3 = tk.Label(main_page, text="Industries", font=("DejaVu Sans Bold", 20), fg='black', anchor='n')
 fact3.grid(row=4, column=4, columnspan=2)
 
-nr4 = tk.Label(main_page, text="USD 2bn", font=("Avenir", 40), fg='dodgerblue', anchor='s')
+nr4 = tk.Label(main_page, text="USD 2bn", font=("DejaVu Sans", 40), fg='dodgerblue', anchor='s')
 nr4.grid(row=5, column=0, columnspan=2)
 nr4.config(width=8, height=2)
-fact4 = tk.Label(main_page, text="Last funding\nround amount", font=("Avenir Bold", 20), fg='black', anchor='n')
+fact4 = tk.Label(main_page, text="Last funding\nround amount", font=("DejaVu Sans Bold", 20), fg='black', anchor='n')
 fact4.grid(row=6, column=0, columnspan=2)
 
-nr5 = tk.Label(main_page, text="654", font=("Avenir", 50), fg='dodgerblue', anchor='s')
+nr5 = tk.Label(main_page, text="654", font=("DejaVu Sans", 50), fg='dodgerblue', anchor='s')
 nr5.grid(row=5, column=2, columnspan=2)
 nr5.config(width=8, height=2)
-fact5 = tk.Label(main_page, text="Seed Investors", font=("Avenir Bold", 20), fg='black', anchor='n')
+fact5 = tk.Label(main_page, text="Seed Investors", font=("DejaVu Sans Bold", 20), fg='black', anchor='n')
 fact5.grid(row=6, column=2, columnspan=2)
 
-nr6 = tk.Label(main_page, text="244", font=("Avenir", 50), fg='dodgerblue', anchor='s')
+nr6 = tk.Label(main_page, text="244", font=("DejaVu Sans", 50), fg='dodgerblue', anchor='s')
 nr6.grid(row=5, column=4, columnspan=2)
 nr6.config(width=8, height=2)
-fact6 = tk.Label(main_page, text="Angel and VC\nInvestors", font=("Avenir Bold", 20), fg='black', anchor='n')
+fact6 = tk.Label(main_page, text="Angel and VC\nInvestors", font=("DejaVu Sans Bold", 20), fg='black', anchor='n')
 fact6.grid(row=6, column=4, columnspan=2)
 
 # -------------------- Dashboard --------------------
 
-label = tk.Label(dashboard, text="Dashboard", font=('Avenir', 40))
+label = tk.Label(dashboard, text="Dashboard", font=('DejaVu Sans', 40))
 label.grid(row=0, column=0, columnspan=10)
 
 # Buttons:
@@ -201,15 +218,15 @@ destroyer_button(main_table, main_page, 1, 11)
 
 pt = Table(main_table, dataframe=PT_Main(df), showtoolbar=False,
            showstatusbar=True, editable=False, enable_menus=True)
-pt.contractColumns()
 pt.sortTable(1, ascending=0)
 config.load_options()
 config.apply_options(options, pt)
+pt.contractColumns()
 pt.show()
 
 # -------------------- Main Graph 1 --------------------
 
-label = tk.Label(main_graphs1, text="Dashboard", font=('Avenir', 40))
+label = tk.Label(main_graphs1, text="Dashboard", font=('DejaVu Sans', 40))
 label.grid(row=0, column=2, columnspan=8)
 
 dashboard_button(main_graphs1, dashboard, 0, 0)
@@ -240,7 +257,7 @@ bar4.get_tk_widget().grid(row=2, column=6, columnspan=6)
 
 # -------------------- Main Graph 2 --------------------
 
-label = tk.Label(main_graphs2, text="Dashboard", font=('Avenir', 40))
+label = tk.Label(main_graphs2, text="Dashboard", font=('DejaVu Sans', 40))
 label.grid(row=0, column=2, columnspan=8)
 
 dashboard_button(main_graphs2, dashboard, 0, 0)
@@ -271,7 +288,7 @@ bar3.get_tk_widget().grid(row=2, column=6, columnspan=6)
 
 # -------------------- Analysis per Sector 1 --------------------
 
-label = tk.Label(interactive_analysis1, text="Analysis per Sector", font=('Avenir', 40))
+label = tk.Label(interactive_analysis1, text="Analysis per Sector", font=('DejaVu Sans', 40))
 label.grid(row=0, column=0, columnspan=10)
 
 # Buttons:
@@ -290,7 +307,7 @@ pie_sector.get_tk_widget().grid(row=2, column=0, columnspan=6)
 
 # -------------------- Analysis per Sector 2 --------------------
 
-label = tk.Label(interactive_analysis2, text="Analysis per Sector", font=('Avenir', 40))
+label = tk.Label(interactive_analysis2, text="Analysis per Sector", font=('DejaVu Sans', 40))
 label.grid(row=0, column=0, columnspan=10)
 
 # Buttons:
@@ -323,7 +340,7 @@ b.grid(column=4, row=3, columnspan=2, sticky='w')
 empty_label(interactive_analysis2, 5, 0)
 empty_label(interactive_analysis2, 5, 2)
 
-l2 = tk.Label(interactive_analysis2, text='', font=('Avenir', 14))
+l2 = tk.Label(interactive_analysis2, text='', font=('DejaVu Sans', 14))
 l2.grid(column=2, row=4, columnspan=2)
 
 
@@ -362,7 +379,7 @@ barh_FUN.get_tk_widget().grid(row=2, column=0, columnspan=6)
 
 sector_CS = "Communication Services"
 
-label = tk.Label(s_CS_main, text="Sector: %s" % sector_CS, font=('Avenir', 40))
+label = tk.Label(s_CS_main, text="Sector: %s" % sector_CS, font=('DejaVu Sans', 40))
 label.grid(row=0, column=0, columnspan=10)
 
 interactive_analysis_button(s_CS_main, interactive_analysis2, 8, 1)
@@ -399,7 +416,7 @@ pt.show()
 
 sector_IT = "Information Technology"
 
-label = tk.Label(s_IT_main, text="Sector: %s" % sector_IT, font=('Avenir', 40))
+label = tk.Label(s_IT_main, text="Sector: %s" % sector_IT, font=('DejaVu Sans', 40))
 label.grid(row=0, column=0, columnspan=10)
 
 interactive_analysis_button(s_IT_main, interactive_analysis2, 8, 1)
@@ -436,7 +453,7 @@ pt.show()
 
 sector_IN = 'Industrials'
 
-label = tk.Label(s_IN_main, text="Sector: %s" % sector_IN, font=('Avenir', 40))
+label = tk.Label(s_IN_main, text="Sector: %s" % sector_IN, font=('DejaVu Sans', 40))
 label.grid(row=0, column=0, columnspan=10)
 
 interactive_analysis_button(s_IN_main, interactive_analysis2, 8, 1)
@@ -473,7 +490,7 @@ pt.show()
 
 sector_UT = 'Utilities'
 
-label = tk.Label(s_UT_main, text="Sector: %s" % sector_UT, font=('Avenir', 40))
+label = tk.Label(s_UT_main, text="Sector: %s" % sector_UT, font=('DejaVu Sans', 40))
 label.grid(row=0, column=0, columnspan=10)
 
 interactive_analysis_button(s_UT_main, interactive_analysis2, 8, 1)
@@ -510,7 +527,7 @@ pt.show()
 
 sector_CD = 'Consumer Discretionary'
 
-label = tk.Label(s_CD_main, text="Sector: %s" % sector_CD, font=('Avenir', 40))
+label = tk.Label(s_CD_main, text="Sector: %s" % sector_CD, font=('DejaVu Sans', 40))
 label.grid(row=0, column=0, columnspan=10)
 
 interactive_analysis_button(s_CD_main, interactive_analysis2, 8, 1)
@@ -547,7 +564,7 @@ pt.show()
 
 sector_EN = 'Energy'
 
-label = tk.Label(s_EN_main, text="Sector: %s" % sector_EN, font=('Avenir', 40))
+label = tk.Label(s_EN_main, text="Sector: %s" % sector_EN, font=('DejaVu Sans', 40))
 label.grid(row=0, column=0, columnspan=10)
 
 interactive_analysis_button(s_EN_main, interactive_analysis2, 8, 1)
@@ -584,7 +601,7 @@ pt.show()
 
 sector_FI = 'Financials'
 
-label = tk.Label(s_FI_main, text="Sector: %s" % sector_FI, font=('Avenir', 40))
+label = tk.Label(s_FI_main, text="Sector: %s" % sector_FI, font=('DejaVu Sans', 40))
 label.grid(row=0, column=0, columnspan=10)
 
 interactive_analysis_button(s_FI_main, interactive_analysis2, 8, 1)
@@ -623,7 +640,7 @@ pt.show()
 
 sector_HE = 'Health Care'
 
-label = tk.Label(s_HE_main, text="Sector: %s" % sector_HE, font=('Avenir', 40))
+label = tk.Label(s_HE_main, text="Sector: %s" % sector_HE, font=('DejaVu Sans', 40))
 label.grid(row=0, column=0, columnspan=10)
 
 interactive_analysis_button(s_HE_main, interactive_analysis2, 8, 1)
@@ -660,7 +677,7 @@ pt.show()
 
 sector_RE = 'Real Estate'
 
-label = tk.Label(s_RE_main, text="Sector: %s" % sector_RE, font=('Avenir', 40))
+label = tk.Label(s_RE_main, text="Sector: %s" % sector_RE, font=('DejaVu Sans', 40))
 label.grid(row=0, column=0, columnspan=10)
 
 interactive_analysis_button(s_RE_main, interactive_analysis2, 8, 1)
@@ -694,7 +711,7 @@ config.apply_options(options, pt)
 pt.show()
 
 # -------------------- VMB Model Page 1 --------------------
-label = tk.Label(vmb_model1, text="VMB Model", font=('Avenir', 40))
+label = tk.Label(vmb_model1, text="VMB Model", font=('DejaVu Sans', 40))
 label.grid(row=0, column=0, columnspan=10)
 
 # Buttons:
@@ -720,11 +737,11 @@ feature_explanation = '\n    VMB Venture Capital developed a tool to forecast if
 
 exp_features = tk.Label(vmb_model1, text=feature_explanation, font=NORMAL_FONT, justify='left', anchor='nw')
 exp_features.grid(row=2, column=0, columnspan=10, sticky='nsew')
-exp_features.config(width=60, height=8)
+exp_features.config(width=52, height=8)
 
-title_sector = tk.Label(vmb_model1, text="Model features: Industry", font=('Avenir', 20, 'bold'))
+title_sector = tk.Label(vmb_model1, text="Model features: Industry", font=('DejaVu Sans', 20, 'bold'))
 title_sector.grid(row=3, column=0, columnspan=10, sticky='nsew')
-title_sector.config(width=60, height=2)
+title_sector.config(width=52, height=2)
 
 list_sectors = ['Communication Services', 'Information Technology', 'Industrials', 'Utilities',
                 'Consumer Discretionary', 'Energy', 'Financials', 'Health Care', 'Real Estate']
@@ -761,7 +778,7 @@ label_sector_selector = tk.Label(vmb_model1, text="Choose a sector: ", font=LARG
 label_sector_selector.grid(column=1, row=4, columnspan=2, sticky='e')
 
 cb_input_sector = ttk.Combobox(vmb_model1, values=list_sectors, width=30, state='readonly', font=LARGE_FONT)
-cb_input_sector.grid(column=3, row=4, columnspan=6, sticky='ew')
+cb_input_sector.grid(column=3, row=4, columnspan=3, sticky='ew')
 cb_input_sector.bind("<<ComboboxSelected>>", vmb_model_inputs_sector)
 cb_input_sector.set('Sector')
 
@@ -772,7 +789,7 @@ label_subindustry_selector = tk.Label(vmb_model1, text="Choose a subindustry: ",
 label_subindustry_selector.grid(column=1, row=5, columnspan=2, sticky='e')
 
 cb_input_subindustry = ttk.Combobox(vmb_model1, values=list_subindustry, width=30, state='readonly', font=LARGE_FONT)
-cb_input_subindustry.grid(column=3, row=5, columnspan=6, sticky='ew')
+cb_input_subindustry.grid(column=3, row=5, columnspan=3, sticky='ew')
 cb_input_subindustry.bind("<<ComboboxSelected>>", vmb_model_inputs_subindustry)
 cb_input_subindustry.set('Subindustry')
 
@@ -783,7 +800,7 @@ label_activities_selector = tk.Label(vmb_model1, text="Choose an activity: ", fo
 label_activities_selector.grid(column=1, row=6, columnspan=2, sticky='e')
 
 cb_input_activity = ttk.Combobox(vmb_model1, values=list_activities, width=30, state='readonly', font=LARGE_FONT)
-cb_input_activity.grid(column=3, row=6, columnspan=6, sticky='ew')
+cb_input_activity.grid(column=3, row=6, columnspan=3, sticky='ew')
 cb_input_activity.set('Activity')
 
 submit_activity = tk.Button(vmb_model1, text="Submit", command=vmb_model_inputs_activity)
@@ -801,7 +818,7 @@ empty_space.config(width=60, height=2)
 
 
 # -------------------- VMB Model Page 2 --------------------
-label = tk.Label(vmb_model2, text="VMB Model", font=('Avenir', 40))
+label = tk.Label(vmb_model2, text="VMB Model", font=('DejaVu Sans', 40))
 label.grid(row=0, column=0, columnspan=10)
 
 # Buttons:
@@ -812,9 +829,9 @@ interactive_analysis_button(vmb_model2, interactive_analysis1, 1, 8)
 destroyer_button(vmb_model2, main_page, 14, 12)
 link_exp(vmb_model2, 14, 1)
 
-title_team = tk.Label(vmb_model2, text="Model features: Experience of the team", font=('Avenir', 20, 'bold'))
+title_team = tk.Label(vmb_model2, text="Model features: Experience of the team", font=('DejaVu Sans', 20, 'bold'))
 title_team.grid(row=3, column=0, columnspan=10, sticky='nsew')
-title_team.config(width=60, height=2)
+title_team.config(width=52, height=2)
 
 rb_AYE = tk.StringVar(vmb_model2)
 rb_BIG = tk.StringVar(vmb_model2)
@@ -842,27 +859,27 @@ keys_REC = list(dict_REC.keys())
 values_REC = list(dict_REC.values())
 
 
-def get_AYE(*args):
+def get_AYE():
     input_AYE = rb_AYE.get()
     return input_AYE
 
 
-def get_BIG(*args):
+def get_BIG():
     input_BIG = rb_BIG.get()
     return input_BIG
 
 
-def get_SUR(*args):
+def get_SUR():
     input_SUR = rb_SUR.get()
     return input_SUR
 
 
-def get_INC(*args):
+def get_INC():
     input_INC = rb_INC.get()
     return input_INC
 
 
-def get_REC(*args):
+def get_REC():
     input_REC = cb_REC.get()
     return input_REC
 
@@ -908,7 +925,7 @@ rb_AYE3.grid(row=6, column=3, sticky='w')
 # Selector: Experience on Big 5 Consulting Firms (var2 - BIG)
 label_BIG = tk.Label(vmb_model2, text="Cofounders have previous\nexperience on one of \nBig 5 Consulting firms?",
                      font=LARGE_FONT, height=3)
-label_BIG.grid(column=6, row=4, columnspan=2, rowspan=2, sticky='nsew')
+label_BIG.grid(column=5, row=4, columnspan=3, rowspan=2, sticky='nsew')
 
 rb_BIG1 = tk.Radiobutton(vmb_model2, text=keys_BIG[0], variable=rb_BIG, value=0, command=get_BIG)
 rb_BIG2 = tk.Radiobutton(vmb_model2, text=keys_BIG[1], variable=rb_BIG, value=1, command=get_BIG)
@@ -922,7 +939,7 @@ empty_space.config(width=60, height=2)
 # Selector: Previous startup had survived recession period (var9 - SUR)
 label_SUR = tk.Label(vmb_model2, text="Its previous startup\nhad survived a recession\nperiod?",
                      font=LARGE_FONT, height=3)
-label_SUR.grid(column=6, row=8, columnspan=2, rowspan=3, sticky='nsew')
+label_SUR.grid(column=5, row=8, columnspan=3, rowspan=3, sticky='nsew')
 
 rb_SUR1 = tk.Radiobutton(vmb_model2, text=keys_SUR[0], variable=rb_SUR, value=0, command=get_SUR)
 rb_SUR2 = tk.Radiobutton(vmb_model2, text=keys_SUR[1], variable=rb_SUR, value=1, command=get_SUR)
@@ -948,7 +965,7 @@ label_REC = tk.Label(vmb_model2, text="Number of recognitions\nto cofounders", f
 label_REC.grid(column=2, row=11, columnspan=2, sticky='nse')
 
 cb_REC = ttk.Combobox(vmb_model2, values=keys_REC, width=30, state='readonly', font=LARGE_FONT)
-cb_REC.grid(column=4, row=11, columnspan=6)
+cb_REC.grid(column=4, row=11, columnspan=3)
 cb_REC.set('Recognitions')
 
 submit_team = tk.Button(vmb_model2, text="Submit", command=vmb_model_inputs_team)
@@ -962,7 +979,7 @@ label_inputs_team2.grid(column=5, row=13, columnspan=5, sticky='w')
 
 
 # -------------------- VMB Model Page 3 --------------------
-label = tk.Label(vmb_model3, text="VMB Model", font=('Avenir', 40))
+label = tk.Label(vmb_model3, text="VMB Model", font=('DejaVu Sans', 40))
 label.grid(row=0, column=0, columnspan=10)
 
 # Buttons:
@@ -973,13 +990,13 @@ interactive_analysis_button(vmb_model3, interactive_analysis1, 1, 8)
 destroyer_button(vmb_model3, main_page, 14, 9)
 link_exp(vmb_model3, 14, 1)
 
-title_market = tk.Label(vmb_model3, text="Model features: Market characteristics", font=('Avenir', 20, 'bold'))
+title_market = tk.Label(vmb_model3, text="Model features: Market characteristics", font=('DejaVu Sans', 20, 'bold'))
 title_market.grid(row=2, column=0, columnspan=10, sticky='nsew')
-title_market.config(width=60, height=2)
+title_market.config(width=55, height=2)
 
-title_bm = tk.Label(vmb_model3, text="Model features: Business Model", font=('Avenir', 20, 'bold'))
+title_bm = tk.Label(vmb_model3, text="Model features: Business Model", font=('DejaVu Sans', 20, 'bold'))
 title_bm.grid(row=7, column=0, columnspan=10, sticky='nsew')
-title_bm.config(width=60, height=2)
+title_bm.config(width=55, height=2)
 
 rb_BAR = tk.StringVar(vmb_model3)
 rb_DWF = tk.StringVar(vmb_model3)
@@ -1012,32 +1029,32 @@ keys_CPB = list(dict_CPB.keys())
 values_CPB = list(dict_CPB.values())
 
 
-def get_BAR(*args):
+def get_BAR():
     input_BAR = rb_BAR.get()
     return input_BAR
 
 
-def get_DWF(*args):
+def get_DWF():
     input_DWF = rb_DWF.get()
     return input_DWF
 
 
-def get_PST(*args):
+def get_PST():
     input_PST = rb_PST.get()
     return input_PST
 
 
-def get_CDA(*args):
+def get_CDA():
     input_CDA = rb_CDA.get()
     return input_CDA
 
 
-def get_MLB(*args):
+def get_MLB():
     input_MLB = rb_MLB.get()
     return input_MLB
 
 
-def get_CPB(*args):
+def get_CPB():
     input_CPB = cb_CPB.get()
     return input_CPB
 
@@ -1130,7 +1147,7 @@ label_CPB = tk.Label(vmb_model3, text="Is a cloud or platform\nbased service or 
 label_CPB.grid(column=1, row=10, columnspan=3, sticky='nse')
 
 cb_CPB = ttk.Combobox(vmb_model3, values=keys_CPB, width=30, state='readonly', font=LARGE_FONT)
-cb_CPB.grid(column=4, row=10, columnspan=6, sticky='w')
+cb_CPB.grid(column=4, row=10, columnspan=3, sticky='w')
 cb_CPB.set('Base')
 
 submit_business = tk.Button(vmb_model3, text="Submit", command=vmb_model_inputs_business)
@@ -1144,7 +1161,7 @@ label_inputs_business2.grid(column=5, row=12, columnspan=5, sticky='w')
 
 
 # -------------------- VMB Model Page Results --------------------
-label = tk.Label(vmb_model_results, text="VMB Model", font=('Avenir', 40))
+label = tk.Label(vmb_model_results, text="VMB Model", font=('DejaVu Sans', 40))
 label.grid(row=0, column=0, columnspan=10)
 
 # Buttons:
@@ -1154,9 +1171,9 @@ dashboard_button(vmb_model_results, dashboard, 1, 4)
 interactive_analysis_button(vmb_model_results, interactive_analysis1, 1, 8)
 destroyer_button(vmb_model_results, main_page, 12, 12)
 
-title_results = tk.Label(vmb_model_results, text="VMB Model Results", font=('Avenir', 20, 'bold'))
+title_results = tk.Label(vmb_model_results, text="VMB Model Results", font=('DejaVu Sans', 20, 'bold'))
 title_results.grid(row=2, column=0, columnspan=10, sticky='nsew')
-title_results.config(width=60, height=2)
+title_results.config(width=52, height=2)
 
 
 def charge_inputs():
@@ -1260,16 +1277,16 @@ button_charge_inputs.grid(column=1, row=3, columnspan=2, rowspan=2, sticky='news
 button_charge_inputs.config(width=10, height=4)
 
 label_inputs_results1 = tk.Label(vmb_model_results, text='', font=LARGE_FONT, justify='right')
-label_inputs_results1.grid(column=3, row=3, columnspan=4, rowspan=4, sticky='e')
+label_inputs_results1.grid(column=3, row=3, columnspan=3, rowspan=4, sticky='e')
 
 label_inputs_results2 = tk.Label(vmb_model_results, text='', font=LARGE_FONT_B, justify='left')
-label_inputs_results2.grid(column=7, row=3, columnspan=4, rowspan=4, sticky='w')
+label_inputs_results2.grid(column=6, row=3, columnspan=4, rowspan=4, sticky='w')
 
-label_results1 = tk.Label(vmb_model_results, text='', font=('Avenir', 20), justify='right')
-label_results1.grid(column=3, row=7, columnspan=4, rowspan=4, sticky='e')
+label_results1 = tk.Label(vmb_model_results, text='', font=('DejaVu Sans', 20), justify='right')
+label_results1.grid(column=3, row=7, columnspan=3, rowspan=4, sticky='e')
 
-label_results2 = tk.Label(vmb_model_results, text='', font=('Avenir', 20, 'bold'), justify='left')
-label_results2.grid(column=7, row=7, columnspan=4, rowspan=4, sticky='w')
+label_results2 = tk.Label(vmb_model_results, text='', font=('DejaVu Sans', 20, 'bold'), justify='left')
+label_results2.grid(column=6, row=7, columnspan=4, rowspan=4, sticky='w')
 
 final_label = tk.Label(vmb_model_results, text='', font=LARGE_FONT, justify='left', anchor='nw')
 final_label.grid(row=11, column=0, columnspan=10, sticky='nsew')

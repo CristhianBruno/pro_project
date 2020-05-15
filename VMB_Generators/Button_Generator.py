@@ -3,9 +3,9 @@ from tkinter.messagebox import askyesno
 import webbrowser
 
 # Fonts:
-LARGE_FONT = ("Avenir", 14)
-NORMAL_FONT = ("Avenir", 12)
-SMALL_FONT = ("Avenir", 10)
+LARGE_FONT = ("DejaVu Sans", 14)
+NORMAL_FONT = ("DejaVu Sans", 12)
+SMALL_FONT = ("DejaVu Sans", 10)
 
 
 # -------------------- Button generators --------------------
