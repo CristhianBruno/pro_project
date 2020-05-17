@@ -1,9 +1,25 @@
+""" ## Programing - Final Project - UNIL - MSc. in Finance - May 2020
+### Group members: Valeria Medinaceli, Martin Ruilova, and Bruno Ayllon.
+---
+
+This scripts is designed to generate all the graphs for the platform.
+
+"""
+
+# Import external dependencies:
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
 
+# Create the graph functions:
 def Graph_Main(data_frame):
+    """ Creates a pie plot of the status of each company on the data base.
+
+    :param data_frame: Data frame generated on the pre-processing.
+    :return: Plot of the status (Success/Failed)
+    """
+
     df = data_frame
     STA_Success = df['STA'].value_counts()[0]
     STA_Failed = df['STA'].value_counts()[1]
@@ -24,6 +40,13 @@ def Graph_Main(data_frame):
 
 
 def Graph_Main1(data_frame):
+    """ Creates a stacked horizontal bar plot of the amount of the year of funding (YOF) given the status
+    of the company.
+
+    :param data_frame: Data frame generated on the pre-processing.
+    :return: Plot of the YOF variable
+    """
+
     df = data_frame
     # Graph: Stacked Bar: YOF and STA
     yof_list = np.sort(df['YOF'].drop_duplicates())
@@ -55,6 +78,12 @@ def Graph_Main1(data_frame):
 
 
 def Graph_Main2(data_frame):
+    """ Creates a pie plot of the companies per country (COU).
+
+    :param data_frame: Data frame generated on the pre-processing.
+    :return: Plot of the COU variable
+    """
+
     df = data_frame
     COU_countries_total = df['COU'].value_counts().index.tolist()
     COU_values_total = df['COU'].value_counts().tolist()
@@ -79,6 +108,13 @@ def Graph_Main2(data_frame):
 
 
 def Graph_Main3(data_frame):
+    """ Creates an horizontal bar plot of the companies considering if their cofounders worked previously
+    on top companies (E10).
+
+    :param data_frame: Data frame generated on the pre-processing.
+    :return: Bar plot of the E10 variable.
+    """
+
     df = data_frame
     pivot_E10STA = pd.pivot_table(df, values='YOF', index='E10', columns='STA',
                                   aggfunc=np.count_nonzero, fill_value=0, margins=True)
@@ -102,6 +138,13 @@ def Graph_Main3(data_frame):
 
 
 def Graph_Main4(data_frame):
+    """ Creates a stacked horizontal bar plot to show if the companies received investments through global
+    incubator competitions (INC).
+
+    :param data_frame: Data frame generated on the pre-processing.
+    :return: Plot of the INC variable.
+    """
+
     df = data_frame
     pivot_INCSTA = pd.pivot_table(df, values='YOF', index='INC', columns='STA',
                                   aggfunc=np.count_nonzero, fill_value=0, margins=True)
@@ -124,6 +167,12 @@ def Graph_Main4(data_frame):
 
 
 def Graph_Main5(data_frame):
+    """ Creates an stacked horizontal bar plot of the average experience of the cofounders (AYE).
+
+    :param data_frame: Data frame generated on the pre-processing.
+    :return: Plot of the AYE variable.
+    """
+
     df = data_frame
     pivot_AYESTA = pd.pivot_table(df, values='YOF', index='AYE', columns='STA',
                                   aggfunc=np.count_nonzero, fill_value=0, margins=True)
@@ -149,6 +198,12 @@ def Graph_Main5(data_frame):
 
 
 def Graph_Main6(data_frame):
+    """ Creates an area plot of the difficulty of getting workforce (DWF).
+
+    :param data_frame: Data frame generated in the pre-processing.
+    :return: Plot of the variable (DWF)
+    """
+
     df = data_frame
     pivot_DWFSTA = pd.pivot_table(df, values='YOF', index='DWF', columns='STA',
                                   aggfunc=np.count_nonzero, fill_value=0, margins=True)
@@ -175,6 +230,13 @@ def Graph_Main6(data_frame):
 
 
 def Graph_Main7(data_frame):
+    """ Creates a donut plot for the existence of barriers of entry (BAR) to the industry given the
+    status of the company.
+
+    :param data_frame: Data Frame generated on the pre-processing.
+    :return: Plot of the BAR variable.
+    """
+
     df = data_frame
     pivot_BARSTA = pd.pivot_table(df, values='YOF', index='BAR', columns='STA',
                                   aggfunc=np.count_nonzero, fill_value=0, margins=True)
@@ -228,6 +290,13 @@ def Graph_Main7(data_frame):
 
 
 def Graph_Main8(data_frame):
+    """ Creates a scatter plot of the funding (FUN) given the number of investors and advisors
+    (INA, INS, and NAD) of a company.
+
+    :param data_frame: Data frame generated in the pre-processing.
+    :return: Plot of the variables FUN, INA, INS, and NAD.
+    """
+
     df = data_frame
     df_FUNINV = df[['FUN', 'INS', 'INA', 'NAD']]
     pivot_FUNINV = pd.pivot_table(df_FUNINV, values=['INS', 'INA', 'NAD'], index='FUN',
@@ -251,6 +320,12 @@ def Graph_Main8(data_frame):
 
 
 def Graph_Sector_Pie(data_frame):
+    """ Creates a pie plot of the companies by sector (GSE).
+
+    :param data_frame: Data frame generated in the pre-processing.
+    :return: Plot of the GSE variable.
+    """
+
     df = data_frame
     # Graph 2: Pie chart by GSE
     pivot_GSESTA = pd.pivot_table(df, values='YOF', index='GSE', columns='STA',
@@ -273,6 +348,12 @@ def Graph_Sector_Pie(data_frame):
 
 
 def Graph_Sector_Barh(data_frame):
+    """ Creates an horizontal bar of the average funding (FUN) by sector (GSE).
+
+    :param data_frame: Data frame generated in the pre-processing.
+    :return: Plot of the variables FUN and GSE.
+    """
+
     df = data_frame
     pivot_FUNSTA = pd.pivot_table(df, values='FUN', index='GSE', columns='STA',
                                   aggfunc=np.nanmean, fill_value=0, margins=True)
@@ -303,6 +384,13 @@ def Graph_Sector_Barh(data_frame):
 
 
 def Graph_Sector_1(data_frame, selected_sector):
+    """ Creates an horizontal bar of the average funding (FUN) by sub-industry (GSU).
+
+    :param data_frame: Data frame generated in the pre-processing.
+    :param selected_sector: Sub-industry selected by the user.
+    :return:  Plot of the variables FUN and GSU.
+    """
+
     df = data_frame
     df_sector = df[df['GSE'] == selected_sector]
     pivot_FUNGSU = pd.pivot_table(df_sector, values='FUN', index='GSU', columns='STA',
@@ -332,10 +420,16 @@ def Graph_Sector_1(data_frame, selected_sector):
 
 
 def Graph_Sector_RE(data_frame, selected_sector):
+    """ Creates an horizontal bar of the average funding (FUN) by sub-industry (GSU).
+    This graph is specific for the Real Estate sector given its characteristics.
+    :param data_frame: Data frame generated in the pre-processing.
+    :param selected_sector: Real Estate.
+    :return:  Plot of the variables FUN and GSU.
+    """
     df = data_frame
     df_sector = df[df['GSE'] == selected_sector]
     pivot_FUNGSU = pd.pivot_table(df_sector, values='FUN', index='GSU', columns='STA',
-                                      aggfunc=np.nanmean, fill_value=0, margins=True)
+                                  aggfunc=np.nanmean, fill_value=0, margins=True)
     pivot_FUNGSU = pivot_FUNGSU.iloc[:-1]
     pivot_FUNGSU = pivot_FUNGSU.reset_index()
     pivot_FUNGSU['Failed'] = round(pivot_FUNGSU['Success'] *0, 2)

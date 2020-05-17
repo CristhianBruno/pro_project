@@ -1,10 +1,21 @@
+""" ## Programing - Final Project - UNIL - MSc. in Finance - May 2020
+### Group members: Valeria Medinaceli, Martin Ruilova, and Bruno Ayllon.
+---
+
+This scripts is designed to generate all the tables for the platform.
+
+"""
+
+
+# Import the external dependencies:
 import pandas as pd
 import numpy as np
 
 
+# Create the functions:
 def PT_Sector(data_frame_base, selected_sector):
-    """
-    Function to create pivot tables based on a selected sector.
+    """ Function to create pivot tables based on a selected sector.
+
     :param data_frame_base: Base Data Frame.
     :param selected_sector: Selection of sector, part of the GSE column of the main data frame.
     :return: Pivot table including:
@@ -83,9 +94,9 @@ def PT_Sector(data_frame_base, selected_sector):
 
 
 def PT_Main(data_frame_base):
-    """
-    Function to create pivot table for the main data frame.
-    :param data_frame_base: Base Data Frame.
+    """ Function to create pivot table for the main data frame.
+
+    :param data_frame_base: Data Frame generated in the pre-processing.
     :return: Pivot table including:
             Subindustry
             Companies
@@ -159,10 +170,10 @@ def PT_Main(data_frame_base):
 
 
 def PT_RE_sector(data_frame_base, sector='Real Estate'):
-    """
-    Function to create pivot tables based on a selected sector.
+    """ Function to create pivot tables based on a selected sector.
+
     :param sector: Sector == Real Estate
-    :param data_frame_base: Base Data Frame.
+    :param data_frame_base: Data Frame generated in the pre-processing.
     :return: Pivot table including:
             Subindustry
             Companies

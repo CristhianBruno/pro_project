@@ -1,6 +1,20 @@
+""" ## Programing - Final Project - UNIL - MSc. in Finance - May 2020
+### Group members: Valeria Medinaceli, Martin Ruilova, and Bruno Ayllon.
+---
+
+This scripts is designed to ease the selection of sub-industry and economic activity for the VMB Model.
+
+"""
 
 
+# Create the selection functions:
 def Get_Subindustry(input_sector):
+    """ Function to select the sub-industry (GSU) given the sector (GSE) selected by the user.
+
+    :param input_sector: GSE variable selected by the user.
+    :return: Sub-industry
+    """
+
     dict_sectors = {'Communication Services': ['Advertising', 'Broadcasting', 'Interactive Home Entertainment',
                                                'Interactive Media & Services', 'Movies & Entertainment',
                                                'Publishing', 'Wireless Telecommunication Services'],
@@ -25,6 +39,12 @@ def Get_Subindustry(input_sector):
 
 
 def Get_Activities(input_subindustry):
+    """ Function to select the economic activity given the sub-industry (GSU) selected by the user.
+
+    :param input_subindustry: GSU variable selected by the user.
+    :return: Economic activity
+    """
+
     dict_subindustries = {'Advertising': ['Advertising', 'Marketing', 'Media', 'Social Media',
                                           'Social Networking', 'Strategy', 'Targeting'],
                           'Broadcasting': 'News',
@@ -60,6 +80,12 @@ def Get_Activities(input_subindustry):
 
 
 def Get_Activity_Value(input_activity):
+    """ Function to provide the value for the selected activity.
+    This function returns the value to be used in the VMB Model.
+    :param input_activity: Economic activity selected by the user.
+    :return: Value of the activity
+    """
+
     dict_activities = {'Advertising': 0,
                        'Analytics': 1,
                        'Career / Job Search': 3,

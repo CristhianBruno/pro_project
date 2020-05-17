@@ -1,5 +1,5 @@
-""" ## Programing - Final Project - UNIL - MSc. in Finance - May 2020
-### Group members: Valeria Medinaceli, Martin Ruilova, and Bruno Ayllon.
+""" Programing - Final Project - UNIL - MSc. in Finance - May 2020
+Group members: Valeria Medinaceli, Martin Ruilova, and Bruno Ayllon.
 ---
 
 The project's objective is to provide the investors a comprehensive platform of the
@@ -9,23 +9,16 @@ investment in these kind of companies.
 This script allows the user to run the platform's GUI. The interface has the
 following structure:
 
-1. **Main page:**
-    Platforms main window. (go to section: [[PRO_Final_Project_VMB.py# main ]] )
-2. **Dashboard:**
-    Relevant information of the data base displayed as graphs and tables.
-    (go to section: [[PRO_Final_Project_VMB.py# dashboard ]] )
-3. **Analysis per sector:**
-    Relevant information of the industries in the data base.
-    (go to section: [[PRO_Final_Project_VMB.py# sector ]] )
-4. **VMB Model:**
-    Prediction model of the sucessfulness of a startup based on the algorithm we generated.
-    (go to section: [[PRO_Final_Project_VMB.py# model ]] )
+1. Main page: Platforms main window.
+2. Dashboard: Relevant information of the data base displayed as graphs and tables.
+3. Analysis per sector: Relevant information of the industries in the data base.
+4. VMB Model: Prediction model of the sucessfulness of a startup based on the algorithm we generated.
 
-The program is based on the CAX_startup database obtained from Kaggle on the
-pre_processing process. Please refer to the README for this process ([[README.md]]).
+The program is based on the CAX_startup database obtained from Kaggle and worked through our
+pre_processing process. Please refer to the README for this process.
 
 This script requires the installation of the environment pro_project_env, set on the following file
-([[pro_project_env.yml]] ). The environment's file is already included in the Github repository.
+pro_project_env.yml. The environment's file is already included in the Github repository.
 However, it can be executed on any environment that has installed the following packages:
 * Tkinter (already included in Python)
 * Numpy
@@ -34,7 +27,7 @@ However, it can be executed on any environment that has installed the following 
 * Scikit-Learn
 * Pillow
 * Pandastable
-Please refer to the README ([[README.md]]) for the installation process of the environment
+Please refer to the README for the installation process of the environment
 or the packages.
 
 This script displays the main frame of the platform, while the buttons, tables,
@@ -146,23 +139,18 @@ for frame in (main_page, dashboard, table_sector, interactive_analysis1,
 def raise_frame(frame_to_call):
     """ Function to raise the selected frame.
 
-    Parameters
-    ----------
-    frame_to_call: Input set according to the user's choice.
-
-    Returns
-    -------
-    Raise the selected frame to the main window.
+    :param frame_to_call: Input set according to the user's choice.
+    :return: Raise the selected frame to the main window.
     """
+
     frame_to_call.tkraise()
 
 
 # -------------------- Main page --------------------
 
-# === main ===
 
-""" Platforms main window
-Display the most relevant factors of the data base and the buttons to direct the 
+""" Platform's main window
+Display the most relevant factors of the database and the buttons to direct the 
 user to each section of the program.
 
 """
@@ -258,11 +246,10 @@ fact6.grid(row=6, column=4, columnspan=2)
 
 
 # -------------------- Dashboard --------------------
-# === dashboard ===
 
-""" Dashboard is divided in two sections:
-1. **Statistics:**
-2. **Graphs:**
+""" Dashboard, consists of two sections:
+1. Statistics
+2. Graphs
 
 """
 
@@ -366,14 +353,13 @@ bar3 = FigureCanvasTkAgg(figure3, main_graphs2)
 bar3.get_tk_widget().grid(row=2, column=6, columnspan=6)
 
 # -------------------- Analysis per Sector 1 --------------------
-# === sector ===
 
 """ Analysis per sector is structured as follows:
-1. **Frame 1:** Contains:
-  1. Four graphs with information in a sector basis.
-2. **Frame 2:** Contains:
-  1. Four graphs with information in a sector basis. 
-  2. Option to select a specific sector to analyse. Each sector displays:
+1. Frame 1: This frame contains:
+  1. Four graphs with information on a sector basis.
+2. Frame 2: This frame includes:
+  1. Four figures with details on a sector basis. 
+  2. Option to select a specific sector to analyze. Each sector displays:
     1. Profile
     2. Statistics
 
@@ -848,13 +834,12 @@ config.apply_options(options, pt)
 pt.show()
 
 # -------------------- VMB Model Page 1 --------------------
-# === model ===
 
 """ VMB Model displays the feature selection and the prediction made using our classification model.
 This section is structured in four frames, three for the feature selection and one to present the results:
-1. Features: **Industry**
-2. Features: **Experience of the team**
-3. Features: **Market Characteristics & Business model**
+1. Features: Industry
+2. Features: Experience of the team
+3. Features: Market Characteristics & Business model
 4. VMB Model Results
 
 IMPORTANT: When using the platform, it is required to push the 'SUBMIT' button every time the 
