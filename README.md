@@ -97,8 +97,9 @@ The steps required to clone the repository are the following:
    * For Mac/Linux: Open Terminal.
 5. Change the current working directory to the location where you want
    the cloned directory.
-6. Type `git clone`, and then paste the URL you copied earlier. `$ git
-   clone 'HERE-COMES-THE-URL'`
+6. Type `git clone`, and then paste the URL you copied earlier.
+   `$ git clone 'HERE-COMES-THE-URL'`
+
 7. Press **Enter** to create your local clone.
 
 ### Setting the environment
