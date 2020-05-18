@@ -278,7 +278,7 @@ def link_exp(where, rows, columns):
     """
     link = tk.Label(where, text="Feature\nexplanations", fg="blue", cursor="dot", font=SMALL_FONT)
     link.bind("<Button-1>",
-              lambda e: callback("https://www.dropbox.com/s/jluw9n9rm34y4ap/Feature%20Explanations.pdf?dl=0"))
+              lambda e: callback("https://render.githubusercontent.com/view/pdf?commit=f5502b42dde7a7653d3a42c75ecbb0551a4cfd37&enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f43726973746869616e4272756e6f2f70726f5f70726f6a6563742f663535303262343264646537613736353364336134326337356563626230353531613463666433372f4578747261732f466561747572652532304578706c616e6174696f6e732e706466&nwo=CristhianBruno%2Fpro_project&path=Extras%2FFeature+Explanations.pdf&repository_id=264005100&repository_type=Repository#bc595f58-5861-4b32-b4cd-7207682ccf7a"))
     link.grid(columns=columns, row=rows, columnspan=2, sticky='news')
 
 
