@@ -97,8 +97,8 @@ The steps required to clone the repository are the following:
    * For Mac/Linux: Open Terminal.
 5. Change the current working directory to the location where you want
    the cloned directory.
-6. Type `git clone`, and then paste the URL you copied earlier.
-   `$ git clone 'HERE-COMES-THE-URL'`
+6. Type `git clone`, and then paste the URL you copied earlier. `$ git
+   clone 'HERE-COMES-THE-URL'`
 
 7. Press **Enter** to create your local clone.
 
@@ -227,6 +227,7 @@ The links provided in each section displays the screenshots of each
 frame in the program.
 
 ### Main page
+
 Platform's main window. It displays the most relevant facts from the
 database and the options to move around the program. This
 [section](https://github.com/CristhianBruno/pro_project/blob/master/Extras/VMB%20-%20Main%20page.png)
@@ -241,10 +242,10 @@ This
 represents a summary of the most relevant information of the database
 displayed in two ways:
 1. Statistics
-    - [Table](https://github.com/CristhianBruno/pro_project/blob/master/Extras/VMB%20-%20Dashboard-Statistics.png)
+   - [Table](https://github.com/CristhianBruno/pro_project/blob/master/Extras/VMB%20-%20Dashboard-Statistics.png)
 2. Graphs
-    - [Page 1](https://github.com/CristhianBruno/pro_project/blob/master/Extras/VMB%20-%20Dashboard-Graphs1.png)
-    - [Page 2](https://github.com/CristhianBruno/pro_project/blob/master/Extras/VMB%20-%20Dashboard-Graphs2.png)
+   - [Page 1](https://github.com/CristhianBruno/pro_project/blob/master/Extras/VMB%20-%20Dashboard-Graphs1.png)
+   - [Page 2](https://github.com/CristhianBruno/pro_project/blob/master/Extras/VMB%20-%20Dashboard-Graphs2.png)
 
 The facts displayed in both the table and charts rely on the key
 features found in the VMB's model development. Thus, they intend to show
@@ -257,15 +258,16 @@ This analysis's objective is to provide insight into the nine different
 sectors of the economy where these startups work. The analysis per
 industry is structured as follows:
 1. [Frame 1](https://github.com/CristhianBruno/pro_project/blob/master/Extras/VMB%20-%20Analysis%20per%20sector-Main.png):
-This frame contains four graphs with information on a sector basis.
+   This frame contains four graphs with information on a sector basis.
 
 2. [Frame 2](https://github.com/CristhianBruno/pro_project/blob/master/Extras/VMB%20-%20Analysis%20per%20sector-Selector.png):
-This screen includes:
-   1.  Four figures with details on a sector basis.
-   2.  Option to select a specific sector to analyze. Each sector's
-       frames displays its [profile](https://github.com/CristhianBruno/pro_project/blob/master/Extras/VMB%20-%20Information%20Technology-Profile.png)
-       and
-       [statistics](https://github.com/CristhianBruno/pro_project/blob/master/Extras/VMB%20-%20Information%20Technology-Statistics.png).
+   This screen includes:
+   1. Four figures with details on a sector basis.
+   2. Option to select a specific sector to analyze. Each sector's
+      frames displays its
+      [profile](https://github.com/CristhianBruno/pro_project/blob/master/Extras/VMB%20-%20Information%20Technology-Profile.png)
+      and
+      [statistics](https://github.com/CristhianBruno/pro_project/blob/master/Extras/VMB%20-%20Information%20Technology-Statistics.png).
 
 **IMPORTANT:** When using the platform, it is required to push the
 'SUBMIT' button every time the user decides to change the selected
@@ -277,19 +279,23 @@ to the last selected sector's profile.
 VMB Model section displays the feature selection, and the prediction
 made using our classification model. This section is structured in four
 frames, three for the feature selection and one to present the results:
-1. Features: [Industry](https://github.com/CristhianBruno/pro_project/blob/master/Extras/VMB%20-%20Model-Features1.png).
+1. Features:
+   [Industry](https://github.com/CristhianBruno/pro_project/blob/master/Extras/VMB%20-%20Model-Features1.png).
    This section includes the following variables:
-   -  GSE - Sector
-   -  GSU - Sub-industry
-   -  IND - Economic activity
-2. Features: [Experience of the team](https://github.com/CristhianBruno/pro_project/blob/master/Extras/VMB%20-%20Model-Features2.png).
+   - GSE - Sector
+   - GSU - Sub-industry
+   - IND - Economic activity
+2. Features:
+   [Experience of the team](https://github.com/CristhianBruno/pro_project/blob/master/Extras/VMB%20-%20Model-Features2.png).
    This section includes the following variables:
    - AYE - Average relevant experience of cofounders
    - BIG - Cofounders have worked on one of the Big 5 consulting firms
    - REC - Number of recognitions to cofounders
-   - SUR - Survival through recession periods of cofounders' previous startups
+   - SUR - Survival through recession periods of cofounders' previous
+     startups
    - INC - Investment received through global incubator competitions
-3. Features: [Market Characteristics and Busines Model](https://github.com/CristhianBruno/pro_project/blob/master/Extras/VMB%20-%20Model-Features3.png).
+3. Features:
+   [Market Characteristics and Busines Model](https://github.com/CristhianBruno/pro_project/blob/master/Extras/VMB%20-%20Model-Features3.png).
    This section includes the following variables:
    - BAR - Existence of barriers of entry to the industry
    - DWF - Difficulty of obtaining workforce
@@ -302,13 +308,21 @@ frames, three for the feature selection and one to present the results:
    returns the model's prediction and precision.
 
 **IMPORTANT:** When using the platform, it is required to push the
-'SUBMIT' button every time the user decides to change the inputs
-selected. If the new selection is not submitted, the program will upload
-the last submitted information to the prediction model.
+'SUBMIT' and 'CHARGE INPUT' buttons every time the user decides to
+change the inputs selected. If the new selection is not submitted, the
+program will upload the last submitted information to the prediction
+model.
 
 The characteristics of all the variables used on the model are presented
 on the following
 [document](https://render.githubusercontent.com/view/pdf?commit=f5502b42dde7a7653d3a42c75ecbb0551a4cfd37&enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f43726973746869616e4272756e6f2f70726f5f70726f6a6563742f663535303262343264646537613736353364336134326337356563626230353531613463666433372f4578747261732f466561747572652532304578706c616e6174696f6e732e706466&nwo=CristhianBruno%2Fpro_project&path=Extras%2FFeature+Explanations.pdf&repository_id=264005100&repository_type=Repository#bc595f58-5861-4b32-b4cd-7207682ccf7a).
+
+Finally, to contact the selected startups please push the 'Contact the
+startup(s)' button. This displays a
+[message box](https://raw.githubusercontent.com/CristhianBruno/pro_project/master/Extras/VMB%20-%20Contact.png)
+with the instructions to receive the contact information and more
+in-depth data about the startups. This button is present at the end of
+the VMB Model results and in every sector profile.
 
 ## Maintenance and update
 
@@ -324,14 +338,13 @@ projects' code stored adequately for further advances and share these
 findings with other interested developers. All the code is appropriately
 commented and documented to ease its use by an outside party.
 
-As the project will take place in a region not
-covered by the initial database scope, the adaptability, and
-replicability of this work is essential for our intentions. Firstly, it
-is necessary to gather the relevant information in the aimed markets.
-Once these databases are uploaded, the model and platform must be
-adequately updated to reflect this data, adjusting the prediction
-models, their respective parameters, and the investors' platform to
-provide a better service for the prospective niche (a platform in
-Spanish, for example).
+As the project will take place in a region not covered by the initial
+database scope, the adaptability, and replicability of this work is
+essential for our intentions. Firstly, it is necessary to gather the
+relevant information in the aimed markets. Once these databases are
+uploaded, the model and platform must be adequately updated to reflect
+this data, adjusting the prediction models, their respective parameters,
+and the investors' platform to provide a better service for the
+prospective niche (a platform in Spanish, for example).
 
 
