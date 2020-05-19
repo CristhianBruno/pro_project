@@ -9,8 +9,9 @@ platform.
 
 # Import external dependencies:
 import tkinter as tk
-from tkinter.messagebox import askyesno
+from tkinter.messagebox import askyesno, showinfo
 import webbrowser
+import numpy as np
 
 # Fonts:
 LARGE_FONT = ("DejaVu Sans", 14)
@@ -222,6 +223,21 @@ def model_continue_button(where, frame, rows, columns):
     button_sector_table.config(width=10, height=3)
 
 
+def contact_button(where, rows, columns):
+    """ Button to go to the next page of the VMB Model.
+
+    :param where: Frame where the button will be installed.
+    :param frame: VMB Model.
+    :param rows: Number of the row where the button will be installed.
+    :param columns: Number of the column where the button will be installed.
+    :return: Creates a widget with the mentioned specifications.
+    """
+    button_sector_table = tk.Button(where, text="Contact the\nstartup(s)",
+                                    command=show_contact, font=("DejaVu Sans", 14, 'bold'), cursor="dot")
+    button_sector_table.grid(row=rows, column=columns, sticky='news', columnspan=2)
+    button_sector_table.config(width=10, height=3)
+
+
 def destroyer_button(where, frame, rows, columns):
     """ Button to quit the program.
 
@@ -246,6 +262,20 @@ def ask_if_quit():
     if question:
         quit()
 
+
+def show_contact():
+    """ Function to show the contact info.
+
+    :return: Message Box
+    """
+    session_nr = np.random.randint(10000, 99999)
+    message_box = showinfo(title='VMB Venture Capital', icon='info',
+                           message='Thank you for using our platform!\n\n'
+                                   'To contact the selected startup(s) please send an email with your session number '
+                                   'to the direction:\n\nvmb-contact@vmb.com\n\n'
+                                   'Session number = %d\n\n'
+                                   'We will provide you more in-depth data and contact information '
+                                   'of your selection to ease your due diligence process.' % session_nr)
 
 def empty_label(where, rows, columns):
     """ Creates an empty label for diagramming.

@@ -494,8 +494,9 @@ label.grid(row=0, column=0, columnspan=10)
 # Buttons:
 interactive_analysis_button(s_CS_main, interactive_analysis2, 8, 1)
 sector_table_button(s_CS_main, s_CS_table, 8, 3)
-destroyer_button(s_CS_main, main_page, 8, 8)
+destroyer_button(s_CS_main, main_page, 9, 8)
 empty_label(s_CS_main, 7, 1)
+contact_button(s_CS_main, 9, 2)
 
 # Graph: Funding per sub-industry
 figure_sector_CS = Graph_Sector_1(df, sector_CS)
@@ -535,6 +536,7 @@ interactive_analysis_button(s_IT_main, interactive_analysis2, 8, 1)
 sector_table_button(s_IT_main, s_IT_table, 8, 3)
 destroyer_button(s_IT_main, main_page, 8, 8)
 empty_label(s_IT_main, 7, 1)
+contact_button(s_IT_main, 9, 2)
 
 # Graph: Funding per sub-industry
 figure_sector_IT = Graph_Sector_1(df, sector_IT)
@@ -574,6 +576,7 @@ interactive_analysis_button(s_IN_main, interactive_analysis2, 8, 1)
 sector_table_button(s_IN_main, s_IN_table, 8, 3)
 destroyer_button(s_IN_main, main_page, 8, 8)
 empty_label(s_IN_main, 7, 1)
+contact_button(s_IN_main, 9, 2)
 
 # Graph: Funding per sub-industry
 figure_sector_IN = Graph_Sector_1(df, sector_IN)
@@ -613,6 +616,7 @@ interactive_analysis_button(s_UT_main, interactive_analysis2, 8, 1)
 sector_table_button(s_UT_main, s_UT_table, 8, 3)
 destroyer_button(s_UT_main, main_page, 8, 8)
 empty_label(s_UT_main, 7, 1)
+contact_button(s_UT_main, 9, 2)
 
 # Graph: Funding per sub-industry
 figure_sector_UT = Graph_Sector_1(df, sector_UT)
@@ -652,6 +656,7 @@ interactive_analysis_button(s_CD_main, interactive_analysis2, 8, 1)
 sector_table_button(s_CD_main, s_CD_table, 8, 3)
 destroyer_button(s_CD_main, main_page, 8, 8)
 empty_label(s_CD_main, 7, 1)
+contact_button(s_CD_main, 9, 2)
 
 # Graph: Funding per sub-industry
 figure_sector_CD = Graph_Sector_1(df, sector_CD)
@@ -691,6 +696,7 @@ interactive_analysis_button(s_EN_main, interactive_analysis2, 8, 1)
 sector_table_button(s_EN_main, s_EN_table, 8, 3)
 destroyer_button(s_EN_main, main_page, 8, 8)
 empty_label(s_EN_main, 7, 1)
+contact_button(s_EN_main, 9, 2)
 
 # Graph: Funding per sub-industry
 figure_sector_EN = Graph_Sector_1(df, sector_EN)
@@ -730,6 +736,7 @@ interactive_analysis_button(s_FI_main, interactive_analysis2, 8, 1)
 sector_table_button(s_FI_main, s_FI_table, 8, 3)
 destroyer_button(s_FI_main, main_page, 8, 8)
 empty_label(s_FI_main, 7, 1)
+contact_button(s_FI_main, 9, 2)
 
 # Graph: Funding per sub-industry
 figure_sector_FI = Graph_Sector_1(df, sector_FI)
@@ -769,6 +776,7 @@ interactive_analysis_button(s_HE_main, interactive_analysis2, 8, 1)
 sector_table_button(s_HE_main, s_HE_table, 8, 3)
 destroyer_button(s_HE_main, main_page, 8, 8)
 empty_label(s_HE_main, 7, 1)
+contact_button(s_HE_main, 9, 2)
 
 # Graph: Funding per sub-industry
 figure_sector_HE = Graph_Sector_1(df, sector_HE)
@@ -808,6 +816,7 @@ interactive_analysis_button(s_RE_main, interactive_analysis2, 8, 1)
 sector_table_button(s_RE_main, s_RE_table, 8, 3)
 destroyer_button(s_RE_main, main_page, 8, 8)
 empty_label(s_RE_main, 7, 1)
+contact_button(s_RE_main, 9, 2)
 
 # Graph: Funding per sub-industry
 figure_sector_RE = Graph_Sector_RE(df, sector_RE)
@@ -1513,6 +1522,9 @@ def vmb_model():
                                   '%.2f%%' % (forecast, (precision * 100)))
     final_label.configure(text=ending_text)
 
+    # Contact button:
+    contact_button(vmb_model_results, 8, 1)
+
 
 # 'Charge Inputs' Button:
 button_charge_inputs = tk.Button(vmb_model_results, text="Charge\nInputs", command=charge_inputs, font=LARGE_FONT)
@@ -1527,13 +1539,13 @@ label_inputs_results2 = tk.Label(vmb_model_results, text='', font=LARGE_FONT_B, 
 label_inputs_results2.grid(column=6, row=3, columnspan=4, rowspan=4, sticky='w')
 
 label_results1 = tk.Label(vmb_model_results, text='', font=('DejaVu Sans', 20), justify='right')
-label_results1.grid(column=3, row=7, columnspan=3, rowspan=4, sticky='e')
+label_results1.grid(column=3, row=8, columnspan=3, rowspan=4, sticky='e')
 
 label_results2 = tk.Label(vmb_model_results, text='', font=('DejaVu Sans', 20, 'bold'), justify='left')
-label_results2.grid(column=6, row=7, columnspan=4, rowspan=4, sticky='w')
+label_results2.grid(column=6, row=8, columnspan=4, rowspan=4, sticky='w')
 
 final_label = tk.Label(vmb_model_results, text='', font=LARGE_FONT, justify='left', anchor='nw')
-final_label.grid(row=11, column=0, columnspan=10, sticky='nsew')
+final_label.grid(row=12, column=0, columnspan=10, sticky='nsew')
 final_label.config(width=60, height=9)
 
 # Close the main program:
