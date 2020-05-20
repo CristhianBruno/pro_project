@@ -1464,7 +1464,8 @@ def charge_inputs():
 
 
 # Final text:
-ending_text = '\n  Thank you for using VMB Venture Capital tool to get our forecast about your ' \
+ending_text = '\n\n' \
+              '  Thank you for using VMB Venture Capital tool to get our forecast about your ' \
               'startup. The tool was developed by\n ' \
               '  our data scientists to provide what determinants entrepreneurs like you have ' \
               'to focus on to succeed, and to\n' \
@@ -1474,9 +1475,7 @@ ending_text = '\n  Thank you for using VMB Venture Capital tool to get our forec
               '  on Kaggle.\n' \
               '  For more information about the model reliability and validation, please contact ' \
               'the following direction:\n' \
-              '  simon.scheidegger@unil.ch or attend to his Advanced Data Analytics class at UNIL ' \
-              'every Wednesday from 08:30\n' \
-              '  to 12:00 (pre-corona schedule or remotely after-corona).'
+              '  vmb-research@vmb.com.'
 
 
 # Prediction function:
