@@ -258,11 +258,13 @@ This analysis's objective is to provide insight into the nine different
 sectors of the economy where these startups work. The analysis per
 industry is structured as follows:
 1. [Frame 1](https://github.com/CristhianBruno/pro_project/blob/master/Extras/VMB%20-%20Analysis%20per%20sector-Main.png):
-   This frame contains four graphs with information on a sector basis.
+   This frame contains a plot pie with the classification of the
+   database on a sector basis.
 
 2. [Frame 2](https://github.com/CristhianBruno/pro_project/blob/master/Extras/VMB%20-%20Analysis%20per%20sector-Selector.png):
    This screen includes:
-   1. Four figures with details on a sector basis.
+   1. An horizontal bar plot with the average amount of funding received
+      by successful and failed startups in each sector.
    2. Option to select a specific sector to analyze. Each sector's
       frames displays its
       [profile](https://github.com/CristhianBruno/pro_project/blob/master/Extras/VMB%20-%20Information%20Technology-Profile.png)
