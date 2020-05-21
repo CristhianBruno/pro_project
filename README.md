@@ -226,6 +226,10 @@ The user interface has the following structure:
 The links provided in each section displays the screenshots of each
 frame in the program.
 
+The platform's structure flow chart is presented below:
+
+<img src=https://raw.githubusercontent.com/CristhianBruno/pro_project/master/VMB_logo.jpg alt="VMB" width=200 height=200>
+
 ### Main page
 
 Platform's main window. It displays the most relevant facts from the
