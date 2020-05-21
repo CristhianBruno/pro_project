@@ -2,7 +2,7 @@
 
 # Welcome!
 
-<img src=https://raw.githubusercontent.com/CristhianBruno/pro_project/master/VMB_logo.jpg alt="VMB" width=200 height=200>
+<img src=https://raw.githubusercontent.com/CristhianBruno/pro_project/master/VMB_logo.jpg alt="VMB Logo" width=200 height=200>
 
 ## Content
 
@@ -228,7 +228,7 @@ frame in the program.
 
 The platform's structure flow chart is presented below:
 
-<img src=https://raw.githubusercontent.com/CristhianBruno/pro_project/master/VMB_logo.jpg alt="VMB" width=200 height=200>
+<img src=https://raw.githubusercontent.com/CristhianBruno/pro_project/master/Extras/VMB%20-%20Platform%20Flow%20Chart.jpg alt="VMB - Flow Chart" width=600 height=900>
 
 ### Main page
 
